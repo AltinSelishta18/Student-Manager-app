@@ -79,18 +79,16 @@ export function StudentProvider({children}){
         })
      }
 
-     function AddGrade(id){
-        setStudents(students.map(student => student.id === id
-            ? {...student, grades: [...student.grades, newGrade]}
-            : student
-        ))
-     }
 
      
 
     return (
         <StudentContext.Provider value={{
-
+            students,
+            AddStudent,
+            DeleteStudent,
+            EditStudent,
+            SaveStudent
         }}>
             {children}
         </StudentContext.Provider>
