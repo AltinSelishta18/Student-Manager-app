@@ -20,6 +20,10 @@ const router = createBrowserRouter([
           {
             path: "/StudentForm",
             element: <StudentForm />
+          },
+          {
+            path: "/StudentList",
+            element: <StudentList />
           }
           
         ]
