@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 function Header(){
     return (
         <header className={HeaderStyle.header}>
+            <h1><span>SM</span>UT</h1>
             <nav>
                 <ul>
                     <Link className={HeaderStyle.link} to="Home">Home</Link>

@@ -1,0 +1,65 @@
+.mainContent{
+    background-image: url("/school-img.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+
+.mainContent::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.521);
+}
+
+.mainText{
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    font-size: 3.5rem;
+}
+
+.mainText span{
+    color: red;
+}
+
+.mainPrg{
+    width: 63%;
+    text-align: justify;
+    font-size: 1.1rem;
+    margin: 0% auto;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+
+.mainButton{
+    background-color: rgba(255, 255, 255, 0.171);
+    margin-top: 1%;
+    width: 15%;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: background-color 0.3s linear, color 0.5s linear;
+}
+
+.mainButton:hover{
+    background-color: red;
+}
