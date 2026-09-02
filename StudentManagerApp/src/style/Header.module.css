@@ -22,4 +22,12 @@
 
 .link{
     text-decoration: none;
+    color: black;
+    transition: font-weight 0.1s linear;
+    padding-bottom: 2%;
+}
+
+.link:hover{
+    font-weight: 600;
+    border-bottom: 1.5px solid black;
 }

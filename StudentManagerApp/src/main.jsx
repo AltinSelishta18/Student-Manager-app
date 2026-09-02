@@ -12,11 +12,15 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <App />,
-        Children: [
+        children: [
           {
             index: true,
             element: <MainContent />
           },
+          {
+            path: "/StudentForm",
+            element: <StudentForm />
+          }
           
         ]
     }

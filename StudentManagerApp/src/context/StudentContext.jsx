@@ -11,8 +11,9 @@ export function StudentProvider({children}){
     const [formData, setFormData] = useState({
         name: "",
         surname: "",
-        birthday: "",
+        DateofBirth: "",
         nation: "",
+        Email: "",
         gender: "",
         grades: []
     })
@@ -23,19 +24,21 @@ export function StudentProvider({children}){
             id: Date.now(),
             name: formData.name,
             surname: formData.surname,
-            birthday: formData.birthday,
+            DateofBirth: formData.DateofBirth,
             nation: formData.nation,
+            Email: `${formData.name}-${formData.surname}@uni-Gjilan.net`,
             gender: formData.gender,
             grades: formData.grades
         }
 
-        setFormData([...newStudent, students]);
+        setStudents([...students, newStudent]);
 
         setFormData({
             name: "",
             surname: "",
-            birthday: "",
+            DateofBirth: "",
             nation: "",
+            Email: "",
             gender: "",
             grades: []
         })
@@ -57,8 +60,9 @@ export function StudentProvider({children}){
             id: currentId,
             name: formData.name,
             surname: formData.surname,
-            birthday: formData.birthday,
+            DateofBirth: formData.DateofBirth,
             nation: formData.nation,
+            Email: formData.Email,
             gender: formData.gender,
             grades: formData.grades
         }
@@ -72,8 +76,9 @@ export function StudentProvider({children}){
         setFormData({
             name: "",
             surname: "",
-            birthday: "",
+            DateofBirth: "",
             nation: "",
+            Email: "",
             gender: "",
             grades: []
         })
@@ -88,7 +93,9 @@ export function StudentProvider({children}){
             AddStudent,
             DeleteStudent,
             EditStudent,
-            SaveStudent
+            SaveStudent,
+            formData,
+            setFormData
         }}>
             {children}
         </StudentContext.Provider>
