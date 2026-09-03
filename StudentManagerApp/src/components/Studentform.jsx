@@ -67,10 +67,9 @@ function StudentForm(){
         if(Object.keys(Validationerrors).length === 0){
             AddStudent()
         }
-
         
     }
-
+    console.log(students)
     return (
         <>
             <div className={StudentFormStyle.container}>

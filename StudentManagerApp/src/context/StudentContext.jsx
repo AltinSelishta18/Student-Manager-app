@@ -24,6 +24,7 @@ export function StudentProvider({children}){
             id: Date.now(),
             name: formData.name,
             surname: formData.surname,
+            student_Id: `ST-${Date.now()}`,
             DateofBirth: formData.DateofBirth,
             nation: formData.nation,
             Email: `${formData.name}-${formData.surname}@uni-Gjilan.net`,
