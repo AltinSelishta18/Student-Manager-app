@@ -34,23 +34,27 @@ function StudentForm(){
         const newErrors = {};
 
         if(!formData.name.trim()){
-            newErrors.name = "Name is Required!"
+            newErrors.name = true;
         }
 
         if(!formData.surname.trim()){
-            newErrors.surname = "Surname is Required!"
+            newErrors.surname = true;
         }
 
         if(!formData.DateofBirth.trim()){
-            newErrors.DateofBirth = "Date of Birth is Required!"
+            newErrors.DateofBirth = true;
         }
 
         if(!formData.nation.trim()){
-            newErrors.nation = "Nation is Required!"
+            newErrors.nation = true;
+        }
+
+        if(formData.Department === "Fakultetet"){
+            newErrors.Department = true;
         }
 
         if(!formData.gender.trim()){
-            newErrors.gender = "Gender is Required!"
+            newErrors.gender = true;
         }
 
         return newErrors
@@ -75,21 +79,25 @@ function StudentForm(){
             <div className={StudentFormStyle.container}>
                 <form className={StudentFormStyle.form} action="" onSubmit={handleSubmit}>
                     <h1>SM<span>UT</span></h1>
-                    <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Emri Studentit/es" autoComplete="off" />
-                    <p className={StudentFormStyle.validationText}>{errors.name}</p>
-                    <input type="text" name="surname" value={formData.surname} onChange={handleChange} placeholder="Mbiemri Studentit/es" autoComplete="off"/>
-                    <p className={StudentFormStyle.validationText}>{errors.surname}</p>
-                    <input type="Date" name="DateofBirth" value={formData.DateofBirth} onChange={handleChange} placeholder="Datëlindja Studentit/es" autoComplete="off"/>
-                    <p className={StudentFormStyle.validationText}>{errors.DateofBirth}</p>
-                    <input type="text" name="nation" value={formData.nation} onChange={handleChange} placeholder="Nacionaliteti Studentit/es" autoComplete="off"/>
-                    <p className={StudentFormStyle.validationText}>{errors.nation}</p>
+                    <input className={errors.name ? StudentFormStyle.error: ""} type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Emri Studentit/es" autoComplete="off" />
+                    <input  className={errors.surname ? StudentFormStyle.error: ""} type="text" name="surname" value={formData.surname} onChange={handleChange} placeholder="Mbiemri Studentit/es" autoComplete="off"/>
+                    <input  className={errors.DateofBirth ? StudentFormStyle.error: ""} type="Date" name="DateofBirth" value={formData.DateofBirth} onChange={handleChange} placeholder="Datëlindja Studentit/es" autoComplete="off"/>
+                    <input  className={errors.nation ? StudentFormStyle.error: ""} type="text" name="nation" value={formData.nation} onChange={handleChange} placeholder="Nacionaliteti Studentit/es" autoComplete="off"/>
+                    <select  className={errors.Department ? StudentFormStyle.error: ""} name="Department" value={formData.Department} onChange={handleChange}>
+                         <option value="Fakultetet">Fakultetet</option>
+                         <option value="Shkenca Kompjuterike">Shkenca Kompjuterike</option>
+                         <option value="Ekonomi">Ekonomi</option>
+                         <option value="Mjekesi">Mjekesi</option>
+                         <option value="Edukim">Edukim</option>
+                         <option value="Gazetari dhe Media">Gazetari dhe Media</option>
+                         <option value="Juridik">Juridik</option>
+                    </select>
                     <label className={StudentFormStyle.genderLabel} htmlFor="Gender">Gjinia Studentit/es:</label>
-                    <p className={StudentFormStyle.validationText}>{errors.gender}</p>
                     <div className={StudentFormStyle.gender}>
                         <label htmlFor="Mashkull">Mashkull</label>
-                        <input type="radio" name="gender" value="Male" onChange={handleChange} />
+                        <input  className={errors.gender ? StudentFormStyle.error: ""} type="radio" name="gender" value="Male" onChange={handleChange} />
                         <label htmlFor="Femër">Femër</label>
-                        <input type="radio" name="gender" value="Female" onChange={handleChange} />
+                        <input  className={errors.gender ? StudentFormStyle.error: ""} type="radio" name="gender" value="Female" onChange={handleChange} />
                     </div>
                     <button className={StudentFormStyle.submitBtn} type="submit">Add Student</button> 
                 </form>

@@ -68,6 +68,11 @@
     color: #fff;
 }
 
-.validationText{
-    color: red;
+.error{
+    border: 1px solid red;
+}
+
+.form select{
+    width: 80%;
+    padding: 1%;
 }
