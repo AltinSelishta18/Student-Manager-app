@@ -1,24 +1,91 @@
 .student{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    gap: 25px;
+    gap: 15px;
     width: 20%;
-    border: 1px solid black;
+    height: 55vh;
+    box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.438);
+    border-radius: 10px;
 }
 
-.img{
-    width: 200px;
-    height: 200px;
-    border-radius: 400px;
-    padding: 16%;
-}
-
-.ProfileContainer{
+.mainTitle{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+}
+
+.mainTitle span{
+    color: #fff;
+    -webkit-text-stroke: 1px red;
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.mainTitle h1{
+    color: red;
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.studentImage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.studentImage img{
+    width: 100px;
+    height: 100px;
+    border-radius: 300px;
+}
+
+.studentDetails{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.studentDetails h2{
+    font-weight: 800;
+    font-size: 1.7rem;
+}
+
+.studentManage{
+    display: flex;
+    justify-content: space-around;
+    height: 15vh;
+    align-items: center;
+    flex-direction: column;
+}
+
+.studentManage button{
+    padding: 2% 4%;
     background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background-color 0.3s linear, color 0.5s linear;
+}
+
+.studentManage button:hover{
+    background-color: #fff;
+    color: red;
+    border: 1px solid red;
+    padding: 2% 5%;
+}
+
+.barCode{
+    width: 180px;
+    height: 25px;
+    background: repeating-linear-gradient(
+        90deg,
+        #000 0px,
+        #000 2px,
+        #fff 2px,
+        #fff 4px
+    );
 }

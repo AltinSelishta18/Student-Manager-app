@@ -84,13 +84,15 @@ function StudentForm(){
                     <input  className={errors.DateofBirth ? StudentFormStyle.error: ""} type="Date" name="DateofBirth" value={formData.DateofBirth} onChange={handleChange} placeholder="Datëlindja Studentit/es" autoComplete="off"/>
                     <input  className={errors.nation ? StudentFormStyle.error: ""} type="text" name="nation" value={formData.nation} onChange={handleChange} placeholder="Nacionaliteti Studentit/es" autoComplete="off"/>
                     <select  className={errors.Department ? StudentFormStyle.error: ""} name="Department" value={formData.Department} onChange={handleChange}>
-                         <option value="Fakultetet">Fakultetet</option>
-                         <option value="Shkenca Kompjuterike">Shkenca Kompjuterike</option>
-                         <option value="Ekonomi">Ekonomi</option>
-                         <option value="Mjekesi">Mjekesi</option>
-                         <option value="Edukim">Edukim</option>
-                         <option value="Gazetari dhe Media">Gazetari dhe Media</option>
-                         <option value="Juridik">Juridik</option>
+                         <option value="Drejtimet">Drejtimet</option>
+                         <option value="Inxhinieri Sofuterike">Inxhinieri Sofuterike</option>
+                         <option value="Robotike">Robotikë</option>
+                         <option value="Zhvillim i Web Aplikacioneve">Zhvillim i Web Aplikacioneve</option>
+                         <option value="Intelegjencë Artificiale">Intelegjencë Artificiale</option>
+                         <option value="Siguri Kibernetike dhe Rrjeta">Siguri Kibernetike dhe Rrjeta</option>
+                         <option value="Game Development">Game Development</option>
+                         <option value="Shkenca e të Dhënave">Shkenca e të Dhënave</option>
+                         <option value="IT">IT</option>
                     </select>
                     <label className={StudentFormStyle.genderLabel} htmlFor="Gender">Gjinia Studentit/es:</label>
                     <div className={StudentFormStyle.gender}>

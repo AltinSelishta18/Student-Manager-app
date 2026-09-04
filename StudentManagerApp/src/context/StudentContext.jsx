@@ -1,12 +1,22 @@
 // Here will be created the main logics of the Student Manager App
 
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const StudentContext = createContext();
 
 export function StudentProvider({children}){
 
-    const [students, setStudents] = useState([])
+    const [students, setStudents] = useState(
+        JSON.parse(localStorage.getItem("students")) || []
+    );
+
+    useEffect(() =>{
+        localStorage.setItem("students", JSON.stringify(students));
+    }, [students]);
+
+    console.log(localStorage.getItem("students"))
+
+
     const [currentId, setCurrentId] = useState(null)
     const [formData, setFormData] = useState({
         name: "",
