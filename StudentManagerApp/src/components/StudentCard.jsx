@@ -3,7 +3,7 @@ import { useContext } from "react"
 import { StudentContext } from "../context/StudentContext"
 
 function StudentCard({student}) {
-    const { ShowStudentDetails } = useContext(StudentContext)
+    const { ShowStudentDetails, RenderGenderImage } = useContext(StudentContext)
 
     function FormatDate(date){
         const Date = date.split("-")
@@ -26,10 +26,10 @@ function StudentCard({student}) {
            <div className={StudentCardStyle.studentImage}>
                 {student.gender === "Male" 
                 ? (
-                    <img className={StudentCardStyle.img} src="/male-picture.png" alt="Male Profile Picture"/>
+                    <img className={StudentCardStyle.img}  src={RenderGenderImage(student.gender)} alt="Male Profile Picture"/>
                 )
                 : (
-                    <img className={StudentCardStyle.img} src="/female-picture.png" alt="Female Profile Picture"/>
+                    <img className={StudentCardStyle.img} src={RenderGenderImage(student.gender)} alt="Female Profile Picture"/>
                 )
             }
            </div>

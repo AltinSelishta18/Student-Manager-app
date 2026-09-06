@@ -17,7 +17,7 @@ function StudentList() {
                 }
            </div>
 
-           <StudentDetailsModal />
+           <StudentDetailsModal/>
         </>
     )
 }

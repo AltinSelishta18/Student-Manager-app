@@ -33,6 +33,15 @@ export function StudentProvider({children}){
 
      // CRUD functions
 
+     const GenderImages = {
+        Male: "/male-picture.png",
+        Female: "/female-picture.png"
+     }
+
+     function RenderGenderImage(gender){
+        return GenderImages[gender]
+     }
+
      function AddStudent(){
         const newStudent = {
             id: Date.now(),
@@ -105,6 +114,11 @@ export function StudentProvider({children}){
         setModal(true)
      }
 
+     function CloseStudentDetails(){
+        setModal(false)
+        setSelectedStudent(null)
+     }
+
 
      
 
@@ -117,8 +131,11 @@ export function StudentProvider({children}){
             SaveStudent,
             formData,
             setFormData,
+            RenderGenderImage,
             ShowStudentDetails,
-            setSelectedStudent,
+            selectedStudent,
+            CloseStudentDetails,
+            Modal
         }}>
             {children}
         </StudentContext.Provider>
