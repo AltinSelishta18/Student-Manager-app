@@ -5,18 +5,6 @@ import { StudentContext } from "../context/StudentContext"
 function StudentCard({student}) {
     const { ShowStudentDetails, RenderGenderImage } = useContext(StudentContext)
 
-    function FormatDate(date){
-        const Date = date.split("-")
-        const birthDate_Year = Date[0]
-
-        Date[0] = Date[Date.length - 1]
-
-        const newDate = Date.slice(0, -1)
-        const YearAdded = [...newDate, birthDate_Year]
-        const UpdatedDate = YearAdded.join("-")
-        return UpdatedDate;
-        
-    }
 
     return (
         <div className={StudentCardStyle.student}>

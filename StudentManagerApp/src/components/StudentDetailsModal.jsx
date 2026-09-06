@@ -9,6 +9,19 @@ function StudentDetails() {
             Modal} = useContext(StudentContext)
 
     if(!Modal) return null;
+
+    function FormatDate(date){
+        const Date = date.split("-")
+        const birthDate_Year = Date[0]
+
+        Date[0] = Date[Date.length - 1]
+
+        const newDate = Date.slice(0, -1)
+        const YearAdded = [...newDate, birthDate_Year]
+        const UpdatedDate = YearAdded.join("-")
+        return UpdatedDate;
+        
+    }
     
     return (
         <div className={StudentDetailsStyle.StudentContainer}>
@@ -27,6 +40,21 @@ function StudentDetails() {
                     <div className={StudentDetailsStyle.closeModal}>
                         <button onClick={() => CloseStudentDetails(false)}>×</button>
                     </div>  
+                 </div>
+                 <div className={StudentDetailsStyle.body}>
+                       <div className={StudentDetailsStyle.StudentPersonalInfo}>
+                            <h3>Personal Information</h3>
+                            <ul className={StudentDetailsStyle.list}>
+                                <li>Emri: {selectedStudent.name}</li>
+                                <li>Mbiemri: {selectedStudent.surname}</li>
+                                <li>Student Id: {selectedStudent.student_Id}</li>
+                                <li>Datëlindja: {FormatDate(selectedStudent.DateofBirth)}</li>
+                                <li>Nacionaliteti: {selectedStudent.nation}</li>
+                                <li>Email: {selectedStudent.Email}</li>
+                                <li>Gjinia: {selectedStudent.gender}</li>
+                                <li>Nota Mesatare: {selectedStudent.grades.length === 0 ? "0.00" : selectedStudent.grades}</li>
+                            </ul>
+                       </div>
                  </div>
              </div>
         </div>
