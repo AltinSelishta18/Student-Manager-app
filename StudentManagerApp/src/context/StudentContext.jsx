@@ -27,6 +27,10 @@ export function StudentProvider({children}){
         gender: "",
         grades: []
     })
+
+    const [selectedStudent, setSelectedStudent] = useState(null)
+    const [Modal, setModal] = useState(false)
+
      // CRUD functions
 
      function AddStudent(){
@@ -96,6 +100,11 @@ export function StudentProvider({children}){
         })
      }
 
+     function ShowStudentDetails(student){
+        setSelectedStudent(student)
+        setModal(true)
+     }
+
 
      
 
@@ -107,7 +116,9 @@ export function StudentProvider({children}){
             EditStudent,
             SaveStudent,
             formData,
-            setFormData
+            setFormData,
+            ShowStudentDetails,
+            setSelectedStudent,
         }}>
             {children}
         </StudentContext.Provider>

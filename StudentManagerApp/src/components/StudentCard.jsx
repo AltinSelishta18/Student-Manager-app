@@ -1,6 +1,9 @@
 import StudentCardStyle from "../style/StudentCard.module.css"
+import { useContext } from "react"
+import { StudentContext } from "../context/StudentContext"
 
 function StudentCard({student}) {
+    const { ShowStudentDetails } = useContext(StudentContext)
 
     function FormatDate(date){
         const Date = date.split("-")
@@ -36,7 +39,7 @@ function StudentCard({student}) {
            </div>
            <div className={StudentCardStyle.studentManage}>
                 <h3 className={StudentCardStyle.barCode}></h3>
-                <button>Student Details</button>
+                <button onClick={() => ShowStudentDetails(student)}>Student Details</button>
            </div>
         </div>
     )

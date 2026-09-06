@@ -2,6 +2,7 @@ import { StudentContext } from "../context/StudentContext"
 import { useContext } from "react"
 import StudentCard from "./StudentCard";
 import StudentListStyle from "../style/StudentList.module.css"
+import StudentDetailsModal from "./StudentDetailsModal"
 function StudentList() {
     const {students} = useContext(StudentContext);
 
@@ -15,6 +16,8 @@ function StudentList() {
                     ))
                 }
            </div>
+
+           <StudentDetailsModal />
         </>
     )
 }
