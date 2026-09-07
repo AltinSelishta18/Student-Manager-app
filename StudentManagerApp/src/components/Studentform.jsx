@@ -97,9 +97,9 @@ function StudentForm(){
                     <label className={StudentFormStyle.genderLabel} htmlFor="Gender">Gjinia Studentit/es:</label>
                     <div className={StudentFormStyle.gender}>
                         <label htmlFor="Mashkull">Mashkull</label>
-                        <input  className={errors.gender ? StudentFormStyle.error: ""} type="radio" name="gender" value="Male" onChange={handleChange} />
+                        <input  className={errors.gender ? StudentFormStyle.error: ""} type="radio" name="gender" value="Mashkull" onChange={handleChange} />
                         <label htmlFor="Femër">Femër</label>
-                        <input  className={errors.gender ? StudentFormStyle.error: ""} type="radio" name="gender" value="Female" onChange={handleChange} />
+                        <input  className={errors.gender ? StudentFormStyle.error: ""} type="radio" name="gender" value="Femër" onChange={handleChange} />
                     </div>
                     <button className={StudentFormStyle.submitBtn} type="submit">Add Student</button> 
                 </form>

@@ -34,8 +34,8 @@ export function StudentProvider({children}){
      // CRUD functions
 
      const GenderImages = {
-        Male: "/male-picture.png",
-        Female: "/female-picture.png"
+        Mashkull: "/male-picture.png",
+        Femer: "/female-picture.png"
      }
 
      function RenderGenderImage(gender){

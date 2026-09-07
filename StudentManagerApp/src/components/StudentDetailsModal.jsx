@@ -50,10 +50,24 @@ function StudentDetails() {
                                 <li>Student Id: {selectedStudent.student_Id}</li>
                                 <li>Datëlindja: {FormatDate(selectedStudent.DateofBirth)}</li>
                                 <li>Nacionaliteti: {selectedStudent.nation}</li>
-                                <li>Email: {selectedStudent.Email}</li>
                                 <li>Gjinia: {selectedStudent.gender}</li>
-                                <li>Nota Mesatare: {selectedStudent.grades.length === 0 ? "0.00" : selectedStudent.grades}</li>
                             </ul>
+                       </div>
+                        <div className={StudentDetailsStyle.AcademicManagement}>
+                            <div className={StudentDetailsStyle.AcademicInfo}>
+                                <h3>Academic Information:</h3>
+                                <ul>
+                                    <li>Drejtimi: {selectedStudent.Department}</li>
+                                    <li>Nota Mesatare: {selectedStudent.grades.length === 0 ? "0.00" : selectedStudent.grades}</li>
+                                    <li>Email: {selectedStudent.Email}</li>
+                                </ul>
+                            </div>
+                            <div className={StudentDetailsStyle.actions}>
+                                    <button>Delete Student</button>
+                                    <button>Edit Student</button>
+                                    <button>Add Grade</button>
+                            </div>
+                            
                        </div>
                  </div>
              </div>

@@ -12,7 +12,7 @@ function StudentCard({student}) {
                 <h1><span>SM</span>UT</h1>
            </div>
            <div className={StudentCardStyle.studentImage}>
-                {student.gender === "Male" 
+                {student.gender === "Mashkull" 
                 ? (
                     <img className={StudentCardStyle.img}  src={RenderGenderImage(student.gender)} alt="Male Profile Picture"/>
                 )
