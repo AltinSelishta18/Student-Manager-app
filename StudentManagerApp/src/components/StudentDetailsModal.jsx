@@ -6,6 +6,7 @@ function StudentDetails() {
     const {selectedStudent,
             CloseStudentDetails,
             RenderGenderImage,
+            DeleteStudent,
             Modal} = useContext(StudentContext)
 
     if(!Modal) return null;
@@ -63,7 +64,7 @@ function StudentDetails() {
                                 </ul>
                             </div>
                             <div className={StudentDetailsStyle.actions}>
-                                    <button>Delete Student</button>
+                                    <button onClick={() => DeleteStudent(selectedStudent.id)}>Delete Student</button>
                                     <button>Edit Student</button>
                                     <button>Add Grade</button>
                             </div>

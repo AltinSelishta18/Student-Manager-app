@@ -35,7 +35,7 @@ export function StudentProvider({children}){
 
      const GenderImages = {
         Mashkull: "/male-picture.png",
-        Femer: "/female-picture.png"
+        Femër: "/female-picture.png"
      }
 
      function RenderGenderImage(gender){
@@ -61,6 +61,7 @@ export function StudentProvider({children}){
         setFormData({
             name: "",
             surname: "",
+            Department: "",
             DateofBirth: "",
             nation: "",
             Email: "",
@@ -71,6 +72,7 @@ export function StudentProvider({children}){
 
      function DeleteStudent(id){
         setStudents(students.filter(student => student.id !== id));
+        setModal(false)
      }
 
      function EditStudent(id){
