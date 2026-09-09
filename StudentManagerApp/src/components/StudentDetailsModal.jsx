@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import StudentDetailsStyle from "../style/StudentDetails.module.css"
 import { StudentContext } from "../context/StudentContext"
+import { Link } from "react-router-dom"
 
 function StudentDetails() {
     const {selectedStudent,
@@ -59,14 +60,13 @@ function StudentDetails() {
                                 <h3>Academic Information:</h3>
                                 <ul>
                                     <li>Drejtimi: {selectedStudent.Department}</li>
-                                    <li>Nota Mesatare: {selectedStudent.grades.length === 0 ? "0.00" : selectedStudent.grades}</li>
                                     <li>Email: {selectedStudent.Email}</li>
                                 </ul>
                             </div>
                             <div className={StudentDetailsStyle.actions}>
-                                    <button onClick={() => DeleteStudent(selectedStudent.id)}>Delete Student</button>
-                                    <button>Edit Student</button>
-                                    <button>Add Grade</button>
+                                    <button className={StudentDetailsStyle.button} onClick={() => DeleteStudent(selectedStudent.id)}>Delete Student</button>
+                                    <Link className={StudentDetailsStyle.button} to={`/StudentForm/${selectedStudent.id}`}>Edit Student</Link>
+                                    <button className={StudentDetailsStyle.button}>Add Grade</button>
                             </div>
                             
                        </div>

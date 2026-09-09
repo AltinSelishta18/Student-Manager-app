@@ -53,7 +53,7 @@ export function StudentProvider({children}){
             nation: formData.nation,
             Email: `${formData.name}-${formData.surname}@uni-Gjilan.net`,
             gender: formData.gender,
-            grades: formData.grades
+            grades: []
         }
 
         setStudents([...students, newStudent]);
@@ -137,7 +137,9 @@ export function StudentProvider({children}){
             ShowStudentDetails,
             selectedStudent,
             CloseStudentDetails,
-            Modal
+            Modal,
+            currentId,
+            setCurrentId
         }}>
             {children}
         </StudentContext.Provider>
