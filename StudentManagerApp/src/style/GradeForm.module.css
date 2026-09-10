@@ -12,7 +12,7 @@
     border: 1px solid red;
     border-radius: 8px;
     width: 30%;
-    height: 75vh;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,4 +31,39 @@
 .GradeFormular span{
     color: red;
     font-weight: 700;
+}
+
+.AddGradeContainer{
+    width: 100%;
+    height: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.GradeFormular input{
+    width: 80%;
+    padding: 1%;
+}
+
+.GradeFormular select{
+    width: 80%;
+    padding: 1%;
+}
+
+.GradeFormular select:focus{
+    outline: none;
+    padding: 1.4%;
+}
+
+.GradeBtn{
+    width: 80%;
+    padding: 1%;
+    background-color: red;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    padding: 2%;
 }

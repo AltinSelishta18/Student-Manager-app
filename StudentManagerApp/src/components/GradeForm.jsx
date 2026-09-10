@@ -11,7 +11,6 @@ function GradeForm(){
     const SelectedGradeStudent = students.find(student => student.id === Number(id))
 
     const studentSubjects = subjects[SelectedGradeStudent?.Department] 
-    console.log("Departments:", SelectedGradeStudent)
     
     
     return (
@@ -19,13 +18,17 @@ function GradeForm(){
             <div className={GradeFormStyle.GradeContainer}>
                     <form className={GradeFormStyle.GradeFormular} action="">
                         <h1>SM<span>UT</span></h1>
-                        <select name="" id="">
-                            {studentSubjects?.map((subject) => (
-                                <option key={subject} value={subject}>
-                                    {subject}
-                                </option>
-                            ))}
+                        <div className={GradeFormStyle.AddGradeContainer}>
+                            <select name="" id="">
+                                {studentSubjects?.map((subject) => (
+                                    <option key={subject} value={subject}>
+                                        {subject}
+                                    </option>
+                                ))}
                         </select>
+                        <input type="number" placeholder="Vendosni Notën nga (5-10)"/>
+                        <button className={GradeFormStyle.GradeBtn} type="button">Shto Notën</button>
+                        </div>
                     </form>
             </div>
         </>
