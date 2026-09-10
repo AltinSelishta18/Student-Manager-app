@@ -66,7 +66,7 @@ function StudentDetails() {
                             <div className={StudentDetailsStyle.actions}>
                                     <button className={StudentDetailsStyle.button} onClick={() => DeleteStudent(selectedStudent.id)}>Delete Student</button>
                                     <Link className={StudentDetailsStyle.button} to={`/StudentForm/${selectedStudent.id}`}>Edit Student</Link>
-                                    <button className={StudentDetailsStyle.button}>Add Grade</button>
+                                    <Link className={StudentDetailsStyle.button} to="/GradeForm">Add Grade</Link>
                             </div>
                             
                        </div>

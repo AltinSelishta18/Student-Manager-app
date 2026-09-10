@@ -6,6 +6,7 @@ import StudentForm from './components/Studentform.jsx';
 import StudentList from "./components/StudentList.jsx";
 import Dashboard from "./components/Dashboard.jsx"
 import MainContent from './components/MainContent.jsx';
+import GradeForm from './components/GradeForm.jsx';
 import App from './App.jsx';
 
 const router = createBrowserRouter([
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
           {
             path: "/StudentForm/:id",
             element: <StudentForm />
+          },
+          {
+            path: "/GradeForm",
+            element: <GradeForm />
           }
           
         ]

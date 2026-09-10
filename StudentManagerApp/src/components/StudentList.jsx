@@ -3,6 +3,7 @@ import { useContext } from "react"
 import StudentCard from "./StudentCard";
 import StudentListStyle from "../style/StudentList.module.css"
 import StudentDetailsModal from "./StudentDetailsModal"
+import GradeForm from "./GradeForm";
 function StudentList() {
     const {students} = useContext(StudentContext);
 
