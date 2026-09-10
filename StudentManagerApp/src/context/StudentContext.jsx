@@ -14,8 +14,6 @@ export function StudentProvider({children}){
         localStorage.setItem("students", JSON.stringify(students));
     }, [students]);
 
-    console.log(localStorage.getItem("students"))
-
 
     const [currentId, setCurrentId] = useState(null)
     const [formData, setFormData] = useState({
@@ -87,6 +85,7 @@ export function StudentProvider({children}){
             id: currentId,
             name: formData.name,
             surname: formData.surname,
+            Department: formData.Department,
             DateofBirth: formData.DateofBirth,
             nation: formData.nation,
             Email: formData.Email,
@@ -136,6 +135,7 @@ export function StudentProvider({children}){
             RenderGenderImage,
             ShowStudentDetails,
             selectedStudent,
+            setSelectedStudent,
             CloseStudentDetails,
             Modal,
             currentId,

@@ -4,7 +4,6 @@ import { StudentContext } from "../context/StudentContext"
 
 function StudentCard({student}) {
     const { ShowStudentDetails, RenderGenderImage } = useContext(StudentContext)
-    console.log(student.gender)
 
     return (
         <div className={StudentCardStyle.student}>

@@ -31,7 +31,7 @@ const router = createBrowserRouter([
             element: <StudentForm />
           },
           {
-            path: "/GradeForm",
+            path: "/GradeForm/:id",
             element: <GradeForm />
           }
           

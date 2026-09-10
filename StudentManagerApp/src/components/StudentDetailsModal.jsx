@@ -10,7 +10,9 @@ function StudentDetails() {
             DeleteStudent,
             Modal} = useContext(StudentContext)
 
+
     if(!Modal) return null;
+
 
     function FormatDate(date){
         const Date = date.split("-")
@@ -66,7 +68,7 @@ function StudentDetails() {
                             <div className={StudentDetailsStyle.actions}>
                                     <button className={StudentDetailsStyle.button} onClick={() => DeleteStudent(selectedStudent.id)}>Delete Student</button>
                                     <Link className={StudentDetailsStyle.button} to={`/StudentForm/${selectedStudent.id}`}>Edit Student</Link>
-                                    <Link className={StudentDetailsStyle.button} to="/GradeForm">Add Grade</Link>
+                                    <Link className={StudentDetailsStyle.button} to={`/GradeForm/${selectedStudent.id}`}>Add Grade</Link>
                             </div>
                             
                        </div>

@@ -136,7 +136,7 @@ function StudentForm(){
                     <select  className={errors.Department ? StudentFormStyle.error: ""} name="Department" value={formData.Department} onChange={handleChange}>
                          <option value="Drejtimet">Drejtimi</option>
                          <option value="Inxhinieri Sofuterike">Inxhinieri Sofuterike</option>
-                         <option value="Robotike">Robotikë</option>
+                         <option value="Robotikë">Robotikë</option>
                          <option value="Zhvillim i Web Aplikacioneve">Zhvillim i Web Aplikacioneve</option>
                          <option value="Intelegjencë Artificiale">Intelegjencë Artificiale</option>
                          <option value="Siguri Kibernetike dhe Rrjeta">Siguri Kibernetike dhe Rrjeta</option>
