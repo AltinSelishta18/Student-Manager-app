@@ -26,6 +26,11 @@ export function StudentProvider({children}){
         grades: []
     })
 
+    const [FormGrade, setFormGrade] = useState({
+        subject: "",
+        grade: ""
+    });
+
     const [selectedStudent, setSelectedStudent] = useState(null)
     const [Modal, setModal] = useState(false)
 
@@ -45,7 +50,7 @@ export function StudentProvider({children}){
             id: Date.now(),
             name: formData.name,
             surname: formData.surname,
-            student_Id: `ST-${Date.now()}`,
+            studentID: `ST-${Date.now()}`,
             Department: formData.Department,
             DateofBirth: formData.DateofBirth,
             nation: formData.nation,
@@ -85,6 +90,7 @@ export function StudentProvider({children}){
             id: currentId,
             name: formData.name,
             surname: formData.surname,
+            studentID: formData.studentID,
             Department: formData.Department,
             DateofBirth: formData.DateofBirth,
             nation: formData.nation,
@@ -120,8 +126,17 @@ export function StudentProvider({children}){
         setSelectedStudent(null)
      }
 
+     function AddGrade(id){
+        const newGrade = {
+            subject: FormGrade.subject,
+            grade: Number(FormGrade.grade)
+        }
 
-     
+        setStudents(students.map(student => student.id === Number(id)
+            ? {...student, grades: [...student.grades, newGrade]}
+            : student 
+        ))
+     }
 
     return (
         <StudentContext.Provider value={{
@@ -139,7 +154,8 @@ export function StudentProvider({children}){
             CloseStudentDetails,
             Modal,
             currentId,
-            setCurrentId
+            setCurrentId,
+            AddGrade
         }}>
             {children}
         </StudentContext.Provider>

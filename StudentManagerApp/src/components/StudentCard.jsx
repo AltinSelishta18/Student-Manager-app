@@ -22,7 +22,7 @@ function StudentCard({student}) {
            </div>
            <div className={StudentCardStyle.studentDetails}>
                 <h2>{student.name} {student.surname}</h2>
-                <p>Student ID: {student.student_Id}</p>
+                <p>Student ID: {student.studentID}</p>
            </div>
            <div className={StudentCardStyle.studentManage}>
                 <h3 className={StudentCardStyle.barCode}></h3>

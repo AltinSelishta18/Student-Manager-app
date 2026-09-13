@@ -24,8 +24,15 @@ function StudentDetails() {
         const YearAdded = [...newDate, birthDate_Year]
         const UpdatedDate = YearAdded.join("-")
         return UpdatedDate;
-        
     }
+
+    // Calculate Average Grade for Each Student
+
+        const StudentAverageGrade = selectedStudent.grades.length === 0 
+            ? 0
+            : selectedStudent.grades.reduce(
+                (sum, gradeInfo) => sum + gradeInfo.grade, 0) / selectedStudent.grades.length
+
     
     return (
         <div className={StudentDetailsStyle.StudentContainer}>
@@ -37,7 +44,7 @@ function StudentDetails() {
                         </div>
                         <div className={StudentDetailsStyle.ProfileInfo}>
                                 <h4>{selectedStudent.name} {selectedStudent.surname}</h4>
-                                <p>Student ID: {selectedStudent.student_Id}</p>
+                                <p>Student ID: {selectedStudent.studentID}</p>
                                 <h3 className={StudentDetailsStyle.barCode}></h3>
                         </div>
                     </div>
@@ -51,7 +58,7 @@ function StudentDetails() {
                             <ul className={StudentDetailsStyle.list}>
                                 <li>Emri: {selectedStudent.name}</li>
                                 <li>Mbiemri: {selectedStudent.surname}</li>
-                                <li>Student Id: {selectedStudent.student_Id}</li>
+                                <li>Student ID: {selectedStudent.studentID}</li>
                                 <li>Datëlindja: {FormatDate(selectedStudent.DateofBirth)}</li>
                                 <li>Nacionaliteti: {selectedStudent.nation}</li>
                                 <li>Gjinia: {selectedStudent.gender}</li>
@@ -62,6 +69,7 @@ function StudentDetails() {
                                 <h3>Academic Information:</h3>
                                 <ul>
                                     <li>Drejtimi: {selectedStudent.Department}</li>
+                                    <li>Mesatarja: {StudentAverageGrade}</li>
                                     <li>Email: {selectedStudent.Email}</li>
                                 </ul>
                             </div>
@@ -70,7 +78,6 @@ function StudentDetails() {
                                     <Link className={StudentDetailsStyle.button} to={`/StudentForm/${selectedStudent.id}`}>Edit Student</Link>
                                     <Link className={StudentDetailsStyle.button} to={`/GradeForm/${selectedStudent.id}`}>Add Grade</Link>
                             </div>
-                            
                        </div>
                  </div>
              </div>

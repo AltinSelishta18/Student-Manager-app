@@ -1,7 +1,8 @@
 // Here will be created the subjects for the Add Grade Form <option>
 
 const subjects = {
-    "Inxhinieri Sofuterike": [
+    "Inxhinieri Softuerike": [
+        "Zgjidhni Lëndën",
         "Programim",
         "Programim i Orientuar në Objekte",
         "Inxhinieri Softuerike",
@@ -12,6 +13,7 @@ const subjects = {
     ],
 
     "Robotikë": [
+        "Zgjidhni Lëndën",
         "Robotikë",
         "Intelegjencë Artificiale",
         "Computer Vision",
@@ -20,6 +22,7 @@ const subjects = {
     ],
 
     "Zhvillim i Web Aplikacioneve": [
+        "Zgjidhni Lëndën",
         "Programim I",
         "Programim II",
         "Programim i Orientuar ne Objekte",
@@ -29,6 +32,7 @@ const subjects = {
     ],
 
     "Intelegjencë Artificiale": [
+        "Zgjidhni Lëndën",
         "Intelegjencë Artificiale",
         "Machine Learning",
         "Neural Networks",
@@ -39,6 +43,7 @@ const subjects = {
     ],
 
     "Siguri Kibernetike dhe Rrjeta": [
+        "Zgjidhni Lëndën",
         "Siguri Kibernetike",
         "Kriptografi",
         "Hacking Etik",
@@ -47,6 +52,7 @@ const subjects = {
     ],
 
     "Game Development": [
+        "Zgjidhni Lëndën",
         "Bazat e Game Development",
         "Programim",
         "Grafikë & 3D",
@@ -55,6 +61,7 @@ const subjects = {
     ],
 
     "Shkenca e të Dhënave": [
+        "Zgjidhni Lëndën",
         "Programim në Python",
         "Statistikë",
         "Matematikë për Shkencën e të Dhënave",
@@ -68,6 +75,7 @@ const subjects = {
     ],
 
     "IT":[
+        "Zgjidhni Lëndën",
         "Bazat e Teknologjisë Informative",
         "Programim",
         "Bazat e të Dhënave",

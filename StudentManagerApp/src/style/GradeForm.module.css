@@ -23,7 +23,7 @@
 
 .GradeFormular h1{
     color: white;
-    -webkit-text-stroke: 2px red;
+    -webkit-text-stroke: 1px red;
     font-size: 3rem;
     font-weight: 700;
 }
@@ -46,6 +46,11 @@
 .GradeFormular input{
     width: 80%;
     padding: 1%;
+}
+
+.GradeFormular input:focus{
+    outline: none;
+    padding: 1.4%;
 }
 
 .GradeFormular select{

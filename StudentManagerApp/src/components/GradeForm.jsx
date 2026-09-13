@@ -5,29 +5,56 @@ import { StudentContext } from "../context/StudentContext";
 import { useParams } from "react-router-dom";
 function GradeForm(){
 
-    const { students } = useContext(StudentContext);
+    const { students, FormGrade, setFormGrade, AddGrade } = useContext(StudentContext);
     const { id } = useParams();
 
-    const SelectedGradeStudent = students.find(student => student.id === Number(id))
+    const SelectedGradeStudent = students.find(student => student.id === Number(id));
 
-    const studentSubjects = subjects[SelectedGradeStudent?.Department] 
-    
-    
+    const studentSubjects = subjects[SelectedGradeStudent?.Department];
+
+    function handleGradeChange(e){
+        const { name, value} = e.target
+
+        setFormGrade({
+            ...FormGrade,
+            [name]: value
+        })
+    }
+
+    function handleGradeSubmit(e){
+        e.preventDefault();
+
+        if(FormGrade.subject === "Zgjidhni Lëndën"){
+            alert("Ky opsion eshte i pavlefshem per te notuar nje student/e.")
+        }
+        else if(FormGrade.subject === "" || FormGrade.grade === ""){
+            alert("Ju lutem plotesoni fushat e nevojshme!")
+        }
+
+        else if(FormGrade.grade < 5 || FormGrade.grade > 10){
+            alert("Kjo note eshte e pavlefshme!")
+        }
+        else{
+            AddGrade(id)
+            console.log(students)
+        }
+    }
+
     return (
         <>
             <div className={GradeFormStyle.GradeContainer}>
-                    <form className={GradeFormStyle.GradeFormular} action="">
+                    <form className={GradeFormStyle.GradeFormular} onSubmit={handleGradeSubmit}>
                         <h1>SM<span>UT</span></h1>
                         <div className={GradeFormStyle.AddGradeContainer}>
-                            <select name="" id="">
+                            <select name="subject" id="" onChange={handleGradeChange}>
                                 {studentSubjects?.map((subject) => (
                                     <option key={subject} value={subject}>
                                         {subject}
                                     </option>
                                 ))}
                         </select>
-                        <input type="number" placeholder="Vendosni Notën nga (5-10)"/>
-                        <button className={GradeFormStyle.GradeBtn} type="button">Shto Notën</button>
+                        <input name="grade" type="number" placeholder="Vendosni Notën nga (5-10)" onChange={handleGradeChange}/>
+                        <button className={GradeFormStyle.GradeBtn} type="submit">Shto Notën</button>
                         </div>
                     </form>
             </div>
