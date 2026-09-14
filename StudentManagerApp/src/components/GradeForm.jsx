@@ -3,6 +3,7 @@ import subjects from "../data/subjects";
 import { useContext } from "react";
 import { StudentContext } from "../context/StudentContext";
 import { useParams } from "react-router-dom";
+
 function GradeForm(){
 
     const { students, FormGrade, setFormGrade, AddGrade } = useContext(StudentContext);
@@ -36,8 +37,15 @@ function GradeForm(){
         }
         else{
             AddGrade(id)
-            console.log(students)
+            console.log("Hello Students:", students)
+
+            setFormGrade({
+            subject: "",
+            grade: ""
+        })
         }
+
+
     }
 
     return (
@@ -46,14 +54,14 @@ function GradeForm(){
                     <form className={GradeFormStyle.GradeFormular} onSubmit={handleGradeSubmit}>
                         <h1>SM<span>UT</span></h1>
                         <div className={GradeFormStyle.AddGradeContainer}>
-                            <select name="subject" id="" onChange={handleGradeChange}>
+                            <select name="subject" id=""value={FormGrade.subject} onChange={handleGradeChange}>
                                 {studentSubjects?.map((subject) => (
                                     <option key={subject} value={subject}>
                                         {subject}
                                     </option>
                                 ))}
                         </select>
-                        <input name="grade" type="number" placeholder="Vendosni Notën nga (5-10)" onChange={handleGradeChange}/>
+                        <input name="grade" type="number" value={FormGrade.grade} placeholder="Vendosni Notën nga (5-10)" onChange={handleGradeChange}/>
                         <button className={GradeFormStyle.GradeBtn} type="submit">Shto Notën</button>
                         </div>
                     </form>

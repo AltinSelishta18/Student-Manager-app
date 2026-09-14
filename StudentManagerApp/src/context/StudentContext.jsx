@@ -136,6 +136,11 @@ export function StudentProvider({children}){
             ? {...student, grades: [...student.grades, newGrade]}
             : student 
         ))
+
+        setFormGrade({
+            subject: "",
+            grade: ""
+        })
      }
 
     return (
@@ -155,7 +160,9 @@ export function StudentProvider({children}){
             Modal,
             currentId,
             setCurrentId,
-            AddGrade
+            AddGrade,
+            FormGrade,
+            setFormGrade
         }}>
             {children}
         </StudentContext.Provider>

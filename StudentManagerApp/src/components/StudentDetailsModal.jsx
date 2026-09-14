@@ -8,6 +8,7 @@ function StudentDetails() {
             CloseStudentDetails,
             RenderGenderImage,
             DeleteStudent,
+            students,
             Modal} = useContext(StudentContext)
 
 
@@ -26,12 +27,21 @@ function StudentDetails() {
         return UpdatedDate;
     }
 
-    // Calculate Average Grade for Each Student
+    /* 
+        updatedStudent updates the data of a specific student so after we add a grade to a student
+        the average grade calculates automatically without needing to refresh the web page. 
 
-        const StudentAverageGrade = selectedStudent.grades.length === 0 
+    */
+    const updatedStudent =  students.find(student => student.id === selectedStudent.id)
+
+
+    // Calculate Average Grade for Each Student
+        const StudentAverageGrade = updatedStudent.grades.length === 0 
             ? 0
-            : selectedStudent.grades.reduce(
-                (sum, gradeInfo) => sum + gradeInfo.grade, 0) / selectedStudent.grades.length
+            : updatedStudent.grades.reduce(
+                (sum, gradeInfo) => sum + gradeInfo.grade, 0) / updatedStudent.grades.length
+
+    
 
     
     return (
@@ -56,21 +66,21 @@ function StudentDetails() {
                        <div className={StudentDetailsStyle.StudentPersonalInfo}>
                             <h3>Personal Information</h3>
                             <ul className={StudentDetailsStyle.list}>
-                                <li>Emri: {selectedStudent.name}</li>
-                                <li>Mbiemri: {selectedStudent.surname}</li>
-                                <li>Student ID: {selectedStudent.studentID}</li>
-                                <li>Datëlindja: {FormatDate(selectedStudent.DateofBirth)}</li>
-                                <li>Nacionaliteti: {selectedStudent.nation}</li>
-                                <li>Gjinia: {selectedStudent.gender}</li>
+                                <li>Emri: {updatedStudent.name}</li>
+                                <li>Mbiemri: {updatedStudent.surname}</li>
+                                <li>Student ID: {updatedStudent.studentID}</li>
+                                <li>Datëlindja: {FormatDate(updatedStudent.DateofBirth)}</li>
+                                <li>Nacionaliteti: {updatedStudent.nation}</li>
+                                <li>Gjinia: {updatedStudent.gender}</li>
                             </ul>
                        </div>
                         <div className={StudentDetailsStyle.AcademicManagement}>
                             <div className={StudentDetailsStyle.AcademicInfo}>
                                 <h3>Academic Information:</h3>
                                 <ul>
-                                    <li>Drejtimi: {selectedStudent.Department}</li>
-                                    <li>Mesatarja: {StudentAverageGrade}</li>
-                                    <li>Email: {selectedStudent.Email}</li>
+                                    <li>Drejtimi: {updatedStudent.Department}</li>
+                                    <li>Mesatarja: {StudentAverageGrade.toFixed(2)}</li>
+                                    <li>Email: {updatedStudent.Email}</li>
                                 </ul>
                             </div>
                             <div className={StudentDetailsStyle.actions}>
