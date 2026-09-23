@@ -37,7 +37,6 @@ function GradeForm(){
         }
         else{
             AddGrade(id)
-            console.log("Hello Students:", students)
 
             setFormGrade({
             subject: "",

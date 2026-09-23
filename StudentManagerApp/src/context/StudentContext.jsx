@@ -132,9 +132,19 @@ export function StudentProvider({children}){
             grade: Number(FormGrade.grade)
         }
 
-        setStudents(students.map(student => student.id === Number(id)
-            ? {...student, grades: [...student.grades, newGrade]}
-            : student 
+        setStudents(students.map(student => {
+            const existingGrade = student.grades.find(student => student.subject === FormGrade.subject)
+
+            if(student.id === Number(id)){
+                if(existingGrade){
+                    alert("Ky student tashmë ka një notë të regjistruar për këtë lëndë.")
+                }
+                else{
+                    return {...student, grades: [...student.grades, newGrade]}
+                }
+            }
+            return student
+        }
         ))
 
         setFormGrade({

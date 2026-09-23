@@ -87,6 +87,7 @@ function StudentDetails() {
                                     <button className={StudentDetailsStyle.button} onClick={() => DeleteStudent(selectedStudent.id)}>Delete Student</button>
                                     <Link className={StudentDetailsStyle.button} to={`/StudentForm/${selectedStudent.id}`}>Edit Student</Link>
                                     <Link className={StudentDetailsStyle.button} to={`/GradeForm/${selectedStudent.id}`}>Add Grade</Link>
+                                    <Link className={StudentDetailsStyle.button} to={`/StudentSuccessDetails/${selectedStudent.id}`}>Academic Record</Link>
                             </div>
                        </div>
                  </div>
