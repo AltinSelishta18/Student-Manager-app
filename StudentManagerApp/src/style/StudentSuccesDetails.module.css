@@ -1,6 +1,55 @@
 .container{
-    background-color: red;
+    border: 1px solid black;
     margin: 3% auto;
     width: 80%;
     height: 75vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    width: 98%;
+    height: 20vh;
+    margin: 1% 1%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.StudentInfo{
+    width: 50%;
+    height: 100%;
+    border: 1px solid darkgray;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+    padding-left: 2%;
+}
+
+.studentImg{
+    width: 70px;
+    height: 70px;
+    border-radius: 140px;
+}
+
+.textInfo{
+    color: black;
+    font-size: 1rem;
+}
+
+.StudentAverage{
+    background-color: red;
+    width: 49%;
+    height: 100%;
+    border: 1px solid darkgray;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+    padding-left: 2%;
 }
