@@ -1,5 +1,6 @@
 .container{
     border: 1px solid black;
+    border-radius: 8px;
     margin: 3% auto;
     width: 80%;
     height: 75vh;
@@ -17,16 +18,19 @@
 }
 
 .StudentInfo{
-    width: 50%;
+    width: 70%;
     height: 100%;
     border: 1px solid darkgray;
     border-radius: 8px;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 15px;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 45px;
     padding-left: 2%;
+}
+
+.StudentInfo h1{
+    font-weight: 700;
 }
 
 .studentImg{
@@ -41,8 +45,7 @@
 }
 
 .StudentAverage{
-    background-color: red;
-    width: 49%;
+    width: 29%;
     height: 100%;
     border: 1px solid darkgray;
     border-radius: 8px;
@@ -51,5 +54,26 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 15px;
-    padding-left: 2%;
+}
+
+.AverageInfo{
+    width: 50%;
+    height: 100%;
+}
+
+.AverageInfo h4{
+    padding-left: 4%;
+    padding-top: 2%;
+}
+
+.averageGrade{
+    font-size: 3.5rem;
+    font-weight: 500;
+    padding-left: 4%;
+}
+
+.ECTS{
+    padding-bottom: 2%;
+    padding-left: 4%;
+    font-weight: 500;
 }
