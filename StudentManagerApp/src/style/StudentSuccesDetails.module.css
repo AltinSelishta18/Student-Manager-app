@@ -47,7 +47,7 @@
 .StudentAverage{
     width: 29%;
     height: 100%;
-    border: 1px solid darkgray;
+    border: 3px solid red;
     border-radius: 8px;
     display: flex;
     justify-content: center;
@@ -77,3 +77,71 @@
     padding-left: 4%;
     font-weight: 500;
 }
+
+.gradesContainer{
+    height: 49.5vh;
+    width: 98%;
+    border-radius: 8px;
+    border: 1px solid darkgray;
+    margin: 0% auto;
+    overflow-y: scroll;
+}
+
+.gradesContainer h2{
+    padding-left: 1%;
+}
+
+.gradesTable{
+    width: 95%;
+    margin: 1% auto;
+    height: 50%;
+    text-align: center;
+}
+
+.gradesTable th{
+    border-bottom: 1px  solid darkgray;
+    padding: 1%;
+}
+
+.gradesTable td{
+    width: 33.3%;
+    font-weight: 500;
+    padding: 1%;
+    border-bottom: 1px solid darkgray;
+}
+
+.gradeHigh {
+    background-color: #2E8B57;
+    color: #fff;
+    width: 35%;
+    margin: auto;
+    padding: 1% 1%;
+    border-radius: 8px;
+}
+
+.gradeMedium {
+    background-color: #D4A017;
+    color: #fff;
+    width: 35%;
+    margin: auto;
+    padding: 1% 1%;
+    border-radius: 8px;
+}
+
+.gradeLow{
+    background-color:  #C0392B;
+    color: #fff;
+    width: 35%;
+    margin: auto;
+    padding: 1% 1%;
+    border-radius: 8px;
+}
+
+.NoGrade{
+    background-color: transparent;
+    color: black;
+    width: 35%;
+    margin: auto;
+    padding: 1% 1%;
+}
+
