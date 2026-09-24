@@ -10,7 +10,10 @@ function StudentSuccessDetails(){
     const { id } = useParams();
 
 
+
     const SelectedStudentRecord = students.find(student => student.id === Number(id));
+    if(!SelectedStudentRecord) return null
+
 
     const SelectedSubject = subjects[SelectedStudentRecord.Department]
 
@@ -20,8 +23,29 @@ function StudentSuccessDetails(){
             : SelectedStudentRecord.grades.reduce(
                 (sum, gradeInfo) => sum + gradeInfo.grade, 0) / SelectedStudentRecord.grades.length
 
-        return StudentAverageGrade
+        let AverageStyle = ""
+
+        if(StudentAverageGrade === 0){
+            AverageStyle = StudentSuccessDetailsStyle.DefaultStyle
+        }
+        else if(StudentAverageGrade >= 9){
+            AverageStyle = StudentSuccessDetailsStyle.AverageHigh
+        }
+        else if(StudentAverageGrade >= 7){
+            AverageStyle = StudentSuccessDetailsStyle.AverageMedium
+        }
+        else{
+            AverageStyle = StudentSuccessDetailsStyle.AverageLow
+        }
+
+        return {
+            average: StudentAverageGrade,
+            style: AverageStyle
+        }
     }
+
+    const Average = CalculateAverage(SelectedStudentRecord)
+
     return (
         <div className={StudentSuccessDetailsStyle.container}>
             <div className={StudentSuccessDetailsStyle.header}>
@@ -35,10 +59,10 @@ function StudentSuccessDetails(){
 
                     </div>
                 </div>
-                <div className={StudentSuccessDetailsStyle.StudentAverage}>
+                <div className={`${StudentSuccessDetailsStyle.StudentAverage} ${Average.style}`}>
                     <div className={StudentSuccessDetailsStyle.AverageInfo}>
                         <h4>Mesatarja:</h4>
-                        <h2 className={StudentSuccessDetailsStyle.averageGrade}>{CalculateAverage(SelectedStudentRecord).toFixed(2)}</h2>
+                        <h2>{Average.average.toFixed(2)}</h2>
                         <p className={StudentSuccessDetailsStyle.ECTS}>ECTS(30)</p>
                     </div>
                 </div>
@@ -46,11 +70,14 @@ function StudentSuccessDetails(){
             <div className={StudentSuccessDetailsStyle.gradesContainer}>
                     <h2>Pasqyra e Notave dhe Lëndëve</h2>
                     <table className={StudentSuccessDetailsStyle.gradesTable}>
-                        <tr>
-                            <th>Lënda</th>
-                            <th>Kredite(ECTS)</th>
-                            <th>Nota</th>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th>Lënda</th>
+                                <th>Kredite(ECTS)</th>
+                                <th>Nota</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                         {SelectedSubject.map(subject => {
 
                             if(subject === "Zgjidhni Lëndën"){
@@ -76,14 +103,16 @@ function StudentSuccessDetails(){
                             }
 
                             return (
-                                <tr key={subject}>
-                                    <td>{subject}</td>
-                                    <td>ECTS(30)</td>
-                                    <td><p className={GradeStyle}>{FoundGrade !== undefined ? FoundGrade.grade : "I pa notuar"}</p></td>
-                                </tr>
+                                    <tr key={subject}>
+                                        <td>{subject}</td>
+                                        <td>ECTS(30)</td>
+                                        <td><p className={GradeStyle}>{FoundGrade !== undefined ? FoundGrade.grade : "I pa notuar"}</p></td>
+                                    </tr>
+                                
                             )
                             
                         })}
+                        </tbody>
                     </table>
             </div>
         </div>

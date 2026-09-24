@@ -9,9 +9,14 @@ function GradeForm(){
     const { students, FormGrade, setFormGrade, AddGrade } = useContext(StudentContext);
     const { id } = useParams();
 
+
+
     const SelectedGradeStudent = students.find(student => student.id === Number(id));
 
     const studentSubjects = subjects[SelectedGradeStudent?.Department];
+
+    console.log(SelectedGradeStudent.Department);
+    console.log(studentSubjects);
 
     function handleGradeChange(e){
         const { name, value} = e.target

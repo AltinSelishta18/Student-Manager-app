@@ -135,7 +135,7 @@ function StudentForm(){
                     <input  className={errors.nation ? StudentFormStyle.error: ""} type="text" name="nation" value={formData.nation} onChange={handleChange} placeholder="Nacionaliteti Studentit/es" autoComplete="off"/>
                     <select  className={errors.Department ? StudentFormStyle.error: ""} name="Department" value={formData.Department} onChange={handleChange}>
                          <option value="Drejtimet">Drejtimi</option>
-                         <option value="Inxhinieri Sofuterike">Inxhinieri Sofuterike</option>
+                         <option value="Inxhinieri Softuerike">Inxhinieri Softuerike</option>
                          <option value="Robotikë">Robotikë</option>
                          <option value="Zhvillim i Web Aplikacioneve">Zhvillim i Web Aplikacioneve</option>
                          <option value="Intelegjencë Artificiale">Intelegjencë Artificiale</option>

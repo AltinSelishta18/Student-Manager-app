@@ -47,7 +47,6 @@
 .StudentAverage{
     width: 29%;
     height: 100%;
-    border: 3px solid red;
     border-radius: 8px;
     display: flex;
     justify-content: center;
@@ -56,26 +55,44 @@
     gap: 15px;
 }
 
-.AverageInfo{
+ .AverageInfo{
     width: 50%;
     height: 100%;
 }
 
+
 .AverageInfo h4{
     padding-left: 4%;
     padding-top: 2%;
+    font-size: 1.3rem;
 }
 
-.averageGrade{
-    font-size: 3.5rem;
-    font-weight: 500;
+.AverageInfo h2{
     padding-left: 4%;
+    font-size: 3.4rem;
+    font-weight: 500;
+}
+
+.DefaultStyle{
+    border: 3px solid black;
+}
+
+.AverageHigh{
+    border: 3px solid #2E8B57;
+}
+
+.AverageMedium{
+    border: 3px solid #D4A017;
+}
+
+.AverageLow{
+    border: 3px solid #C0392B;
 }
 
 .ECTS{
-    padding-bottom: 2%;
     padding-left: 4%;
     font-weight: 500;
+    font-size: 1rem;
 }
 
 .gradesContainer{
