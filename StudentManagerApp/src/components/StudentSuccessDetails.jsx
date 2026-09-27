@@ -6,7 +6,7 @@ import subjects from "../data/subjects"
 
 
 function StudentSuccessDetails(){
-    const { students, RenderGenderImage } = useContext(StudentContext)
+    const { students, RenderGenderImage, DeleteGrade } = useContext(StudentContext)
     const { id } = useParams();
 
 
@@ -68,13 +68,14 @@ function StudentSuccessDetails(){
                 </div>
             </div>
             <div className={StudentSuccessDetailsStyle.gradesContainer}>
-                    <h2>Pasqyra e Notave dhe Lëndëve</h2>
+                    <h2>Transkripta e Notave</h2>
                     <table className={StudentSuccessDetailsStyle.gradesTable}>
                         <thead>
                             <tr>
                                 <th>Lënda</th>
                                 <th>Kredite(ECTS)</th>
                                 <th>Nota</th>
+                                <th>&#128203;</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -86,7 +87,7 @@ function StudentSuccessDetails(){
 
 
                             const FoundGrade = SelectedStudentRecord.grades.find(grade => subject === grade.subject)
-
+                            console.log("Nota gjetur", FoundGrade)
                             let GradeStyle = "";
 
                             if(!FoundGrade){
@@ -107,6 +108,19 @@ function StudentSuccessDetails(){
                                         <td>{subject}</td>
                                         <td>ECTS(30)</td>
                                         <td><p className={GradeStyle}>{FoundGrade !== undefined ? FoundGrade.grade : "I pa notuar"}</p></td>
+                                        <td>
+                                            {FoundGrade === undefined
+                                                ? "I pa notuar"
+                                                : FoundGrade.grade === 5
+                                                ? "Studenti nuk ka kaluar"
+                                                :(
+                                                    <>
+                                                        <button onClick={() => DeleteGrade(SelectedStudentRecord.id, FoundGrade.id)} className={StudentSuccessDetailsStyle.manageGradeBtn}>&#215;</button>
+                                                        <button className={StudentSuccessDetailsStyle.manageGradeBtn}>&#9999;</button>
+                                                   </>
+                                                ) 
+                                            }
+                                        </td>
                                     </tr>
                                 
                             )

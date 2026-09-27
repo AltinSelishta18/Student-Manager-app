@@ -2,7 +2,7 @@
     border: 1px solid black;
     border-radius: 8px;
     margin: 3% auto;
-    width: 80%;
+    width: 90%;
     height: 75vh;
     display: flex;
     flex-direction: column;
@@ -121,7 +121,7 @@
 }
 
 .gradesTable td{
-    width: 33.3%;
+    width: 25%;
     font-weight: 500;
     padding: 1%;
     border-bottom: 1px solid darkgray;
@@ -160,5 +160,15 @@
     width: 35%;
     margin: auto;
     padding: 1% 1%;
+}
+
+.manageGradeBtn {
+    width: 9%;
+    height: 3.5vh;
+    margin: 2%;
+    background-color: white;
+    border: 1px solid black;
+    color: #000;
+    border-radius: 4px;
 }
 

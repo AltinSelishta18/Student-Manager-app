@@ -10,7 +10,6 @@ function GradeForm(){
     const { id } = useParams();
 
 
-
     const SelectedGradeStudent = students.find(student => student.id === Number(id));
 
     const studentSubjects = subjects[SelectedGradeStudent?.Department];

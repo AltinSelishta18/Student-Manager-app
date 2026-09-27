@@ -128,6 +128,7 @@ export function StudentProvider({children}){
 
      function AddGrade(id){
         const newGrade = {
+            id: Date.now(),
             subject: FormGrade.subject,
             grade: Number(FormGrade.grade)
         }
@@ -153,6 +154,24 @@ export function StudentProvider({children}){
         })
      }
 
+     function DeleteGrade(studentId, gradeId){
+        console.log("Student id", studentId)
+        console.log("Grade Id", gradeId)
+        setStudents(students.map(student => {
+            if(student.id === Number(studentId)){
+                return {
+                    ...student,
+                    grades: student.grades.filter(grade => grade.id !== Number(gradeId))
+                }
+            }
+            return student
+        })
+
+        
+    )
+
+     }
+
     return (
         <StudentContext.Provider value={{
             students,
@@ -172,7 +191,8 @@ export function StudentProvider({children}){
             setCurrentId,
             AddGrade,
             FormGrade,
-            setFormGrade
+            setFormGrade,
+            DeleteGrade
         }}>
             {children}
         </StudentContext.Provider>
