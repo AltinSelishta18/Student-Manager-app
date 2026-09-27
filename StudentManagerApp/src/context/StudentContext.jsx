@@ -165,11 +165,31 @@ export function StudentProvider({children}){
                 }
             }
             return student
-        })
-
-        
+        }) 
     )
+     }
 
+     function EditGrade(studentID, gradeID){
+        const FoundStudent = students.find(student => student.id === Number(studentID));
+
+        const FoundGrade = FoundStudent.grades.find(grade => grade.id === Number(gradeID))
+
+        setFormGrade({...FormGrade, subject: FoundGrade.subject, grade: FoundGrade.grade})
+     }
+
+     function SaveGrade(studentId, gradeId, newGrade){
+        setStudents(students.map(student => {
+            if(student.id === Number(studentId)){
+                const UpdatedGrades = student.grades.map(grade => {
+                    if(grade.id === Number(gradeId)){
+                        return {...grade, grade: newGrade}
+                    }
+                    return grade
+                })
+                return {...student, grades: UpdatedGrades}
+            }
+            return student
+        }))
      }
 
     return (
